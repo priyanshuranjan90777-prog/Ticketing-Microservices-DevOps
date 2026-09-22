@@ -9,13 +9,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/SRayen/Ticketing-Microservices.git',
-                    branch: 'master'
-            }
-        }
-
         stage('Build & Push Docker Images') {
             steps {
                 withCredentials([usernamePassword(
