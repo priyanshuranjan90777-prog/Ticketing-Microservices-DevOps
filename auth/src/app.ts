@@ -16,7 +16,7 @@ app.use(json());
 app.use(
   cookieSession({
     signed: false, //disable encryption: (To be understood between diff languages!) / (JWT is already encrypted)
-    secure: process.env.NODE_ENV !== "test", //True in PROD (only used with https)  //False in TEST (To work without https)
+    secure: false, // HTTP is used by the local Minikube ingress
     //RQ: NODE_ENV variable are : development | production | test
   })
 );
